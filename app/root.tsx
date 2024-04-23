@@ -24,22 +24,8 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: appStylesHref },
 ];
 
-interface Contact {
-  id: string;
-  first: string;
-  last: string;
-  avatar: string;
-  twitter: string;
-  notes: string;
-  favorite: boolean;
-}
-
-interface LoaderData {
-  contacts: Contact[];
-}
-
 export default function App() {
-  const { contacts } = useLoaderData<LoaderData>();
+  const { contacts } = useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>
